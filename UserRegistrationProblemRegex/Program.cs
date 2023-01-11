@@ -6,7 +6,7 @@
         {
             Console.WriteLine("\t\tWelcome To User Registration Problem using Regex\n");
             Console.WriteLine("Please Select option from below List");
-            Console.WriteLine("\n1. Validate First Name ");
+            Console.WriteLine("\n1. Validate First Name \n2. Validate Last Name");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -16,7 +16,15 @@
                     string firstName = Console.ReadLine();
                     bool firstNameResult = UserRegistration.ValidateFirstName(firstName);
                     UserRegistration.PrintResult(firstNameResult);
-                    break;           
+                    break;
+                case 2:
+                    Console.WriteLine("\t  Enter Last Name");
+                    Console.WriteLine("\t--------------------");
+                    string LastName = Console.ReadLine();
+                    bool lastNameResult = UserRegistration.ValidateLastName(LastName);
+                    UserRegistration.PrintResult(lastNameResult);
+                    break;
+
                 default:
                     Console.WriteLine("Please Enter Valid Number");
                     break;
