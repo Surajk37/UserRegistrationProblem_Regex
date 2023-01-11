@@ -32,6 +32,14 @@ namespace UserRegistrationProblemRegex
             return Regex.IsMatch(email, REGEX_EMAIL);
         }
 
+        //Method to test Mobile Format
+        public static bool ToValidateMobileNumber(string mobile)
+        {
+            string REGEX_Mobile = "^[1-9]{1,3}[ ][1-9][0-9]{9}$";
+
+            return Regex.IsMatch(mobile, REGEX_Mobile);
+        }
+        
         //To print the result
         public static void PrintResult(bool result)
         {

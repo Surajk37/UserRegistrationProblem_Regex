@@ -6,7 +6,7 @@
         {
             Console.WriteLine("\t\tWelcome To User Registration Problem using Regex\n");
             Console.WriteLine("Please Select option from below List");
-            Console.WriteLine("\n1. Validate First Name \n2. Validate Last Name \n3. To Validate Email");
+            Console.WriteLine("\n1. Validate First Name \n2. Validate Last Name \n3. To Validate Email \n4. Mobile Format Validate");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -30,12 +30,19 @@
                     string Email = Console.ReadLine();
                     bool email = UserRegistration.ToValidateAEmail(Email);
                     UserRegistration.PrintResult(email);
-            break;
-            default:
-            Console.WriteLine("Please Enter Valid Number");
-            break;
-        }
-        Console.ReadLine();
+                    break;
+                case 4:
+                    Console.WriteLine("\t  Enter Mobile Number ");
+                    Console.WriteLine("\t--------------------");
+                    string Mobile = Console.ReadLine();
+                    bool mobile = UserRegistration.ToValidateMobileNumber(Mobile);
+                    UserRegistration.PrintResult(mobile);
+                    break;
+                default:
+                    Console.WriteLine("Please Enter Valid Number");
+                    break;
+            }
+              Console.ReadLine();
         }
     }
 }
