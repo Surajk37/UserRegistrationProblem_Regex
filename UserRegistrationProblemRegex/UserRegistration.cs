@@ -27,7 +27,7 @@ namespace UserRegistrationProblemRegex
         //Method to test Email
         public static bool ToValidateAEmail(string email)
         {
-            string REGEX_EMAIL = "^[a-zA-Z0-9]+([.][A-Za-z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]+)?$";   
+            string REGEX_EMAIL = "^[a-zA-Z0-9]+([.][A-Za-z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]+)?$";   //regex patern
 
             return Regex.IsMatch(email, REGEX_EMAIL);
         }
@@ -39,17 +39,25 @@ namespace UserRegistrationProblemRegex
 
             return Regex.IsMatch(mobile, REGEX_Mobile);
         }
-        
+
+        //Method to test Password
+        public static bool ValidatePassword(string password)
+        {
+            string REGEX_PASSWORD = "^[a-zA-Z0-9]{8,}$";   //rule number 1 applied minimum 8 character
+
+            return Regex.IsMatch(password , REGEX_PASSWORD);
+        }
+
         //To print the result
         public static void PrintResult(bool result)
         {
            if (result)
            {
-             Console.WriteLine("Valid.");
+             Console.WriteLine("Is Valid.");
            }
            else
            {
-             Console.WriteLine("Invalid.");
+             Console.WriteLine("Is Invalid.");
            }
         }
     }
