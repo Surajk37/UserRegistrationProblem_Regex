@@ -43,7 +43,8 @@ namespace UserRegistrationProblemRegex
         //Method to test Password
         public static bool ValidatePassword(string password)
         {
-            string REGEX_PASSWORD = "^[a-zA-Z0-9]{8,}$";   //rule number 1 applied minimum 8 character
+            //string REGEX_PASSWORD = "^[a-zA-Z0-9]{8,}$";   //rule number 1 applied minimum 8 character
+            string REGEX_PASSWORD = "^[A-Z]{1,}[a-zA-Z0-9]{7,}$";   //rule number 2 applied minimum 8 character at least 1 uper case
 
             return Regex.IsMatch(password , REGEX_PASSWORD);
         }
@@ -53,11 +54,11 @@ namespace UserRegistrationProblemRegex
         {
            if (result)
            {
-             Console.WriteLine("Is Valid.");
+             Console.WriteLine(" Valid Input");
            }
            else
            {
-             Console.WriteLine("Is Invalid.");
+             Console.WriteLine(" Invalid Input ");
            }
         }
     }
