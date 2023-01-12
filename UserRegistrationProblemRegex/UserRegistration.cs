@@ -44,8 +44,8 @@ namespace UserRegistrationProblemRegex
         public static bool ValidatePassword(string password)
         {
             //string REGEX_PASSWORD = "^[a-zA-Z0-9]{8,}$";   //rule number 1 applied minimum 8 character
-            string REGEX_PASSWORD = "^[A-Z]{1,}[a-zA-Z0-9]{7,}$";   //rule number 2 applied minimum 8 character at least 1 uper case
-
+            //string REGEX_PASSWORD = "^[A-Z]{1,}[a-zA-Z0-9]{7,}$";   //rule number 2 applied  at least 1 upper case
+            string REGEX_PASSWORD = "^[A-Z]{1,}[0-9]{1,}[a-zA-z0-9]{8,}$";//   //rule number 3 applied at least 1  numeric number
             return Regex.IsMatch(password , REGEX_PASSWORD);
         }
 

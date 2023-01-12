@@ -42,8 +42,8 @@
                     Console.WriteLine("\t  Enter Password ");
                     Console.WriteLine("\t--------------------");
                     string Password = Console.ReadLine();
-                    bool passwordResult2 = UserRegistration.ValidatePassword(Password);
-                    UserRegistration.PrintResult(passwordResult2);
+                    bool passwordResult3 = UserRegistration.ValidatePassword(Password);
+                    UserRegistration.PrintResult(passwordResult3);
                     break;
                 default:
                     Console.WriteLine("Please Enter Valid Number");
