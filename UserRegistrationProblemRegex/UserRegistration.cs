@@ -9,6 +9,20 @@ namespace UserRegistrationProblemRegex
 {
     class UserRegistration
     {
+        //list of the sample emails
+        private List<string> AllsampleMails = new List<string>()
+        {
+            "abc@yahoo.com",
+            "abc-100@yahoo.com",
+            "abc.100@yahoo.com",
+            "abc111@abc.com",
+            "abc-100@abc.net",
+            "abc.100@abc.com.au",
+            "abc@1.com",
+            "abc@gmail.com.com",
+            "abc+100@gmail.com"
+        };
+
         //Method to test first name
         public static bool ValidateFirstName(string firstName)
         {
@@ -49,6 +63,19 @@ namespace UserRegistrationProblemRegex
             string REGEX_PASSWORD = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8}";//   //rule number 4 applied exactly 1 special character
 
             return Regex.IsMatch(password , REGEX_PASSWORD);
+        }
+
+        //Method to test sample emails
+        public bool ValidateEmails(string allemail)
+        {
+            string REGEX_ALLEMAIL = "^[a-zA-Z0-9]+([.+-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3})?$"; // for all sample emails
+
+            return Regex.IsMatch(allemail, REGEX_ALLEMAIL);
+        }
+        //Method to get the list
+        public  List<string> GetList()
+        {
+            return AllsampleMails;
         }
 
         //To print the result

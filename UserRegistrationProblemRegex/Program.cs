@@ -1,4 +1,6 @@
-﻿namespace UserRegistrationProblemRegex
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace UserRegistrationProblemRegex
 {
     class Program
     {
@@ -6,7 +8,7 @@
         {
             Console.WriteLine("\t\tWelcome To User Registration Problem using Regex\n");
             Console.WriteLine("Please Select option from below List");
-            Console.WriteLine("\n1. Validate First Name \n2. Validate Last Name \n3. To Validate Email \n4. Mobile Number Format Validate \n5. Validate Password");
+            Console.WriteLine("\n1. Validate First Name \n2. Validate Last Name \n3. To Validate Email \n4. Mobile Number Format Validate \n5. Validate Password \n6. Validating All Email Samples");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -44,6 +46,15 @@
                     string Password = Console.ReadLine();
                     bool passwordResult4 = UserRegistration.ValidatePassword(Password);
                     UserRegistration.PrintResult(passwordResult4);
+                    break;
+                case 6:
+                    Console.WriteLine("Checking for  all sample emails : ");
+                    UserRegistration user = new UserRegistration();
+                    foreach (string mail in user.GetList())
+                    {
+                        Console.Write(mail + " : ");
+                        UserRegistration.PrintResult(user.ValidateEmails(mail));
+                    }
                     break;
                 default:
                     Console.WriteLine("Please Enter Valid Number");
